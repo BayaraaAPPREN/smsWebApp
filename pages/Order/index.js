@@ -1,4 +1,6 @@
 import AdminNavbar from "../../components/AdminNavbar";
+import HeaderAdmin from "../../components/HeaderAdmin";
+import Tables from "../../components/Tables";
 
 
 export default function Order(){
@@ -8,8 +10,11 @@ export default function Order(){
                 <div className="grid col-span-1">
                     <AdminNavbar/>
                 </div>
-                <div className="grid col-span-4">
-                    order
+                <div className="grid col-span-5 bg-slate-200">
+                    <div>
+                        <HeaderAdmin/>
+                        <Tables/>
+                    </div>
                 </div>
             </div>
         </div>

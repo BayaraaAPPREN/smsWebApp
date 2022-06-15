@@ -3,14 +3,18 @@
 export default function Dialog(){
     return(
         <div>
-            <label for="my-modal" class="btn modal-button">open modal</label>
-            <input type="checkbox" id="my-modal" class="modal-toggle" />
+           <label for="my-modal-5" className="bg-lime-500 rounded-lg py-2 px-8 text-white hover:bg-lime-700 cursor-pointer modal-button">Захиалга өгөх</label>
+
+            <input type="checkbox" id="my-modal-5" class="modal-toggle"/>
             <div class="modal">
-            <div class="modal-box">
-                <h3 class="font-bold text-lg">Congratulations random Interner user!</h3>
-                <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+            <div class="modal-box w-11/12 max-w-5xl">
                 <div class="modal-action">
-                <label for="my-modal" class="btn">Yay!</label>
+                  <label for="my-modal-5" className="bg-lime-500 rounded-lg py-2 px-8 text-white hover:bg-lime-700 cursor-pointer modal-button">X</label>
+                </div>
+                <div>
+                    <div>
+                        <h1>Нөхцлийн код</h1>
+                    </div>
                 </div>
             </div>
             </div>

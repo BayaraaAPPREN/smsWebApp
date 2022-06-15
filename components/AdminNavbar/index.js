@@ -9,7 +9,7 @@ export default function AdminNavbar(){
     return(
         <div className="">
            <div className="">
-              <div className="grid justify-center bg-slate-600 h-screen">
+              <div className="grid justify-center bg-white h-screen">
                   <div className=" mt-10">
                     <div className="flex justify-center">
                        <img className="rounded-full w-28 h-28" src="/pro.jpg"/>
@@ -20,7 +20,7 @@ export default function AdminNavbar(){
                     <div className="text-white text-xs text-center">
                        <h1>Хэрэглэгчийн дугаар: 0021</h1>
                     </div>
-                    <div className='mt-20'>
+                    <div className='mt-2'>
                         <div className='flex justify-start cursor-pointer'>
                             <div>
                                 <GrCircleInformation size={25}/>
@@ -75,7 +75,6 @@ export default function AdminNavbar(){
                             <div className='ml-4'>
                                 <h1>Гарах</h1>
                             </div>
-                            <Dialog/>
                         </div>
                     </div>
                   </div>
