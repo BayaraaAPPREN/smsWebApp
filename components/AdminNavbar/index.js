@@ -3,10 +3,12 @@ import { GrCircleInformation, GrDocumentText } from 'react-icons/gr';
 import {BsBookmarkPlus} from 'react-icons/bs'
 import {BiHelpCircle, BiExit} from 'react-icons/bi'
 import {FaPhoneAlt} from 'react-icons/fa'
+import Link from 'next/link'
+import Dialog from '../Dialog';
 export default function AdminNavbar(){
     return(
-        <div className="grid grid-cols-4">
-           <div className="grid col-span-1">
+        <div className="">
+           <div className="">
               <div className="grid justify-center bg-slate-600 h-screen">
                   <div className=" mt-10">
                     <div className="flex justify-center">
@@ -32,9 +34,11 @@ export default function AdminNavbar(){
                             <div>
                                 <GrDocumentText size={25}/>
                             </div> 
+                            <Link href="/Order">
                             <div className='ml-4'>
                                 <h1>Захиалгын жагсаалт</h1>
                             </div>
+                            </Link>
                         </div>
 
                         <div className='flex justify-start cursor-pointer mt-4'>
@@ -71,6 +75,7 @@ export default function AdminNavbar(){
                             <div className='ml-4'>
                                 <h1>Гарах</h1>
                             </div>
+                            <Dialog/>
                         </div>
                     </div>
                   </div>

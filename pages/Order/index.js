@@ -9,7 +9,7 @@ export default function Order(){
                     <AdminNavbar/>
                 </div>
                 <div className="grid col-span-4">
-                    admin
+                    order
                 </div>
             </div>
         </div>
