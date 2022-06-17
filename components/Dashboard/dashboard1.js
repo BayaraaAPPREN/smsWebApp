@@ -1,8 +1,8 @@
 
 
-export default function Dashboard() {
+export default function Dashboard1() {
   return (
-    <div className="pl-10 pr-4">
+    <div className="px-6">
       <div
         className={
           "relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded mt-4 bg-white px-2" 
@@ -25,4 +25,5 @@ export default function Dashboard() {
         
     </div>
   )
-}
+  }
+  
