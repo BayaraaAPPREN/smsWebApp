@@ -14,19 +14,19 @@ export default function AdminNavbar(){
                     <div className="flex justify-center">
                        <img className="rounded-full w-28 h-28" src="/pro.jpg"/>
                     </div>
-                    <div className="text-xl mt-4 mb-2 text-center text-white">
+                    <div className="text-xl mt-4 mb-2 text-center text-slate-700">
                        <h1>Хэрэглэгчийн нэр</h1>
                     </div>
-                    <div className="text-white text-xs text-center">
+                    <div className="text-slate-600 text-xs text-center">
                        <h1>Хэрэглэгчийн дугаар: 0021</h1>
                     </div>
-                    <div className='mt-2'>
+                    <div className='mt-8'>
                         <div className='flex justify-start cursor-pointer'>
                             <div>
                                 <GrCircleInformation size={25}/>
                             </div> 
                             <div className='ml-4'>
-                                <h1>Хувийн мэдээлэл</h1>
+                                <h1>Захиалга</h1>
                             </div>
                         </div>
 
@@ -34,9 +34,9 @@ export default function AdminNavbar(){
                             <div>
                                 <GrDocumentText size={25}/>
                             </div> 
-                            <Link href="/Order">
+                            <Link href="/Plan">
                             <div className='ml-4'>
-                                <h1>Захиалгын жагсаалт</h1>
+                                <h1>Төлөвлөгөө</h1>
                             </div>
                             </Link>
                         </div>
@@ -46,7 +46,7 @@ export default function AdminNavbar(){
                                 <BsBookmarkPlus size={25}/>
                             </div> 
                             <div className='ml-4'>
-                                <h1>Захиалгын хуудас</h1>
+                                <h1>Заааварчилгаа</h1>
                             </div>
                         </div>
 
@@ -55,16 +55,7 @@ export default function AdminNavbar(){
                                 <BiHelpCircle size={25}/>
                             </div> 
                             <div className='ml-4'>
-                                <h1>Тусламж</h1>
-                            </div>
-                        </div>
-
-                        <div className='flex justify-start cursor-pointer  mt-4'>
-                            <div>
-                                <FaPhoneAlt size={25}/>
-                            </div> 
-                            <div className='ml-4'>
-                                <h1>Холбоо барих</h1>
+                                <h1>Тайлан</h1>
                             </div>
                         </div>
 

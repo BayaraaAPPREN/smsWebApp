@@ -1,9 +1,9 @@
 import AdminNavbar from "../../components/AdminNavbar";
 import HeaderAdmin from "../../components/HeaderAdmin";
-import Tables from "../../components/Tables";
+import CardTable from "../../components/Table";
 
 
-export default function Order(){
+export default function Plan(){
     return(
         <div className="">
             <div className="grid grid-cols-6">
@@ -11,10 +11,10 @@ export default function Order(){
                     <AdminNavbar/>
                 </div>
                 <div className="grid col-span-5 bg-slate-200">
-                    <div>
+                        <div className="w-full overflow-x-auto">
                         <HeaderAdmin/>
-                        <Tables/>
-                    </div>
+                          <CardTable/>
+                        </div>
                 </div>
             </div>
         </div>

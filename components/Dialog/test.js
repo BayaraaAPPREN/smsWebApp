@@ -1,13 +1,33 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
+import Calendar from './calendar'
 
 export default function MyModal() {
   let [isOpen, setIsOpen] = useState(false)
 
+
+  const [order, setOrder] = useState({ code: "", type: "", number: "", text: "", date: "", time: "", textaera: ""});
+  const [ text, setText ] = useState('')
+  const [ textaera, setTextaera ] = useState('255')
+  console.log(order)
+
+  // function Submit(){
+  //   if()
+  // }
+
+  function TextConnect (e){
+    const a = 1
+    const b = text
+    let len = e.target.value.length
+    setText(e.target.value)
+    setTextaera(255 - len )
+    if(textaera == 0){
+      alert("Дүүрсэн")
+    }
+  }
   function closeModal() {
     setIsOpen(false)
   }
-
   function openModal() {
     setIsOpen(true)
   }
@@ -60,37 +80,44 @@ export default function MyModal() {
                     <div className='mx-10'>
                         <div className='flex justify-start items-center'>
                             <h1 className='w-40'>Нөхцлийн код :</h1>
-                            <select className='bg-lime-200 px-4 rounded-lg py-1 mx-10  '> 
-                                <option>Сонгох</option>
-                                <option>Сонгох</option>
-                                <option>Сонгох</option>
-                                <option>Сонгох</option>
+                            <select className='bg-lime-200 px-4 rounded-lg py-1 mx-10  '
+                              value={order.code}
+                              onChange={ e => setOrder({...order, code:e.target.value})}
+                            > 
+                                <option value="0" className=''selected>Сонгох</option>
+                                <option value="Нөхцөлтэй">Нөхцөлтэй</option>
+                                <option value="Нөхцөлгүй">Нөхцөлгүй</option>
                             </select>
-                            <h1 className='text-xs text-blue-600 cursor-pointer'>Заавар</h1>
+                            <input className='w-10 bg-lime-200 border placeholder:text-center mr-2' placeholder='../..'/>
+                            <input className='w-10 bg-lime-200 border placeholder:text-center' placeholder='../..'/>
+                            <h1 className='text-xs text-blue-600 cursor-pointer mx-2'>Заавар</h1>
                         </div>
                         <div className='mt-4 flex justify-start items-center    '>
                             <h1 className='w-40'>Төрөл :</h1>
-                            <select className='bg-lime-200 px-4 rounded-lg py-1 mx-10  '> 
-                                <option>Сонгох</option>
-                                <option>Сонгох</option>
-                                <option>Сонгох</option>
-                                <option>Сонгох</option>
+                            <select className='bg-lime-200 px-4 rounded-lg py-1 mx-10'
+                             value={order.type}
+                             onChange={ e => setOrder({...order, type:e.target.value})}
+                            > 
+                                <option value="0" selected>Сонгох</option>
+                                <option value="Unitel">Unitel</option>
+                                <option value="Toki">Toki</option>
+                                <option value="Univision">Univision</option>
+                                <option value="Voice BC">Voice BC</option>
+                                <option value="Other operator">Other operator</option>
                             </select>
                             <h1 className='text-xs text-blue-600 cursor-pointer'>Заавар</h1>
                         </div>
-                        <div className='mt-4 flex justify-start items-center    '>
+                        <div className='mt-4 flex justify-start items-center'>
                             <h1 className='w-40'>Тусгай дугаар :</h1>
-                            <select className='bg-lime-200 px-4 rounded-lg py-1 mx-10  '> 
-                                <option>Сонгох</option>
-                                <option>Сонгох</option>
-                                <option>Сонгох</option>
-                                <option>Сонгох</option>
-                            </select>
+                            <input className='bg-lime-200 px-2 rounded-lg py-1 mx-10' type="number"
+                            value={order.number}
+                            onChange={ e => setOrder({...order, number:e.target.value})}
+                            />
                             <h1 className='text-xs text-blue-600 cursor-pointer'>Заавар</h1>
                         </div>
                         <div className='mt-4 flex justify-start items-center    '>
                             <h1 className='w-42'>Сегментийн шалгуур :</h1>
-                            <select className='bg-lime-200 px-4 rounded-lg py-1 mx-10  '> 
+                            <select className='bg-lime-200 px-4 rounded-lg py-1 mx-10'> 
                                 <option>Сонгох</option>
                                 <option>Сонгох</option>
                                 <option>Сонгох</option>
@@ -98,25 +125,40 @@ export default function MyModal() {
                             </select>
                             <h1 className='text-xs text-blue-600 cursor-pointer'>Заавар</h1>
                         </div>
-                        <div className='mt-4 flex justify-start items-center    '>
+                        <div className='mt-4 flex justify-start items-center'>
                             <h1 className='w-40'>Текст :</h1>
-                            <textarea className='bg-lime-200 mx-10 rounded-lg px-10'>
-                            </textarea>
+                            <textarea className='bg-lime-200 mx-10 rounded-lg px-10'
+                            value={order.textaera}
+                            onChange={ e => setOrder({...order, type:e.target.value})}
+                            />
                             <h1 className='text-xs text-blue-600 cursor-pointer'>Заавар</h1>
                         </div>
                         <div className='mt-4 flex justify-start items-center    '>
                             <h1 className='w-40'>Огноо :</h1>
-                            <input className='bg-lime-200 rounded-lg py-2 px-4 mx-10' type="date"/>
+                            <input className='bg-lime-200 rounded-lg py-2 px-4 mx-10' type="date"
+                             value={order.date}
+                             onChange={ e => setOrder({...order, date:e.target.value})}
+                            />
                             <h1 className='text-xs text-blue-600 cursor-pointer mr-4'>Заавар</h1>
                             <input className=' w-6  h-6 mr-2' type="checkbox"/>
-                            <input className='bg-lime-200 rounded-lg py-2 px-4 ' type="time"/>
+                            <input className='bg-lime-200 rounded-lg py-2 px-4 ' type="time"
+                             value={order.time}
+                             onChange={ e => setOrder({...order, time:e.target.value})}
+                            />
                             <h1 className='text-xs text-blue-600 cursor-pointer'>Заавар</h1>
                         </div>
-                        <div className='mt-4 flex justify-start items-center    '>
+                        <div className='mt-4 flex justify-start items-center'>
                             <h1 className='w-40'>Нэмэлт тайлбар :</h1>
-                            <textarea className='bg-lime-200 mx-10 rounded-lg px-10'>
+                            <textarea  className='bg-lime-200 mx-10 rounded-lg px-10'
+                               value={text}
+                               onChange={TextConnect}
+                            >
                             </textarea>
                             <h1 className='text-xs text-blue-600 cursor-pointer'>Заавар</h1>
+                        </div>
+                        <div className=' flex justify-center mr-40'>
+                          <h1 className=' text-center text-xs mt-2 mr-4'>Бичих боломжтой утгын тоо </h1>
+                           <h1 className=' text-center text-xs mt-2 text-red-400'> {textaera}</h1>
                         </div>
                     </div>
                   </div>
