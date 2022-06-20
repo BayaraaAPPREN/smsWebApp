@@ -9,7 +9,7 @@ export default function AnalysistNavbar(){
     return(
         <div className="">
            <div className="">
-              <div className="grid justify-center bg-black h-screen">
+              <div className="grid justify-center bg-slate-800 h-screen">
                   <div className=" mt-20">
                     <div className="flex justify-center">
                        <img className=" border-solid border-4 border-lime-500 rounded-full w-28 h-28 " src="/ww.jpg"/>
@@ -20,23 +20,23 @@ export default function AnalysistNavbar(){
                     <div className="text-white text-xs mb-20 text-center font-Source Serif Pro underline decoration-white font-normal hover:font-bold">
                        <h1>Ажилтны дугаар: 0349</h1>
                     </div>
-                    <div className='mt-2'>
-                        <div className='flex justify-start cursor-pointer'>
+                    <div className='mt-2 '>
+                        <div className='flex justify-start cursor-pointer hover:bg-slate-700 rounded-md pr-8 '>
                             <div>
                          <img className="  w-6 h-6 "src='/user.png'></img>
                             </div> 
-                            <div className='ml-4 mb-2 text-white'>
-                                <h1 className='bg-gradient-to-r hover:from-green-400 hover:to-blue-500'>Хувийн мэдээлэл</h1>
+                            <div className='ml-4 mb-2'>
+                                <h1 className='text-white'>Хувийн мэдээлэл</h1>
                             </div>
                         </div>
 
-                        <div className='flex justify-start cursor-pointer mt-4'>
+                        <div className='flex justify-start cursor-pointer mt-4 '>
                             <div>
                          <img className='w-6 h-6 'src='/f.png'></img>
                             </div> 
                            
                             <div className='ml-4 mb-2'>
-                                <h1 className='text-white hover:bg-lime-500 active:bg-lime-500 hover:text-white '>Захиалгын хянах</h1>
+                                <h1 className='text-white '>Захиалгын хянах</h1>
                             </div>
                             
                         </div>
@@ -57,7 +57,7 @@ export default function AnalysistNavbar(){
                             <img className='w-6 h-6'src='/map.png'></img>
                             </div> 
                             <div className='ml-4 mb-2'>
-                                <h1 className='hover:text-lime-500 text-white'>Зааварчилгаа</h1>
+                                <h1 className=' text-white'>Зааварчилгаа</h1>
                             </div>
                         </div>
                         

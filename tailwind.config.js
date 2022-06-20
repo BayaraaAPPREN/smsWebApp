@@ -28,7 +28,11 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
 
     },
-    extend: {},
+    extend: {
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
+      }
+    },
   },
   plugins:  [require("daisyui")],
 }
