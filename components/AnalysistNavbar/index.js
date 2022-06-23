@@ -15,7 +15,7 @@ export default function AnalysistNavbar(){
                        <img className=" border-solid border-4 border-lime-500 rounded-full w-28 h-28 " src="/ww.jpg"/>
                     </div>
                     <div className="text-xl mt-6 mb-1  text-center text-white hover:text-lime-500 font-normal hover:font-bold">
-                       <h1 class="font-semibold ">Business Analysist</h1>
+                       <h1 className="font-semibold ">Business Analysist</h1>
                     </div>
                     <div className="text-white text-xs mb-20 text-center font-Source Serif Pro underline decoration-white font-normal hover:font-bold">
                        <h1>Ажилтны дугаар: 0349</h1>

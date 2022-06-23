@@ -170,11 +170,19 @@ export default function MyModal() {
                     >
                       Хаах
                     </button>
+                     
                     <button
                       onClick={closeModal}
-                      className="bg-blue-700 hover:bg-blue-500 text-white rounded-lg px-4 py-2 mx-4"
+                      className="bg-blue-700 hover:bg-blue-500 text-white rounded-lg px-4 py-2 ml-16"
                     >
-                      Илгээх
+                      Хадгалах
+                    </button>
+
+                    <button
+                      onClick={closeModal}
+                      className="bg-blue-700 hover:bg-blue-500 text-white rounded-lg px-4 py-2 mx-2"
+                    >
+                      Захиалга илгээх
                     </button>
                   </div>
                 </Dialog.Panel>

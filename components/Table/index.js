@@ -24,11 +24,11 @@ export default function CardTable({ color }) {
                 Жагсаалтууд
               </h3>
             </div>
-            <div>
+            {/* <div>
               <div>
                 <Dialog/>
               </div>
-          </div>
+          </div> */}
           </div>
         </div>
         <div className="block w-full overflow-x-auto">

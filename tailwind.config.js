@@ -1,4 +1,5 @@
-module.exports = {
+const withMT = require("@material-tailwind/react/utils/withMT");
+module.exports =  withMT({
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -29,10 +30,13 @@ module.exports = {
 
     },
     extend: {
+      backgroundImage: {
+        'back': "url('/enn.png')",
+      },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
       }
     },
   },
   plugins:  [require("daisyui")],
-}
+});
