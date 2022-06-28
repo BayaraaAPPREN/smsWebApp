@@ -1,11 +1,20 @@
 import '../styles/globals.css'
 import { ThemeProvider } from "@material-tailwind/react";
+import { AppWrapper } from "./context";
+
+
+
 
 function MyApp({ Component, pageProps }) {
+  
   return (
     <ThemeProvider>
-      <Component {...pageProps} />
-    </ThemeProvider>
+        <AppWrapper>
+            <Component {...pageProps} />
+        </AppWrapper>
+    </ThemeProvider>  
+
+    
   );
 }
 

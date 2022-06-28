@@ -1,5 +1,5 @@
-const withMT = require("@material-tailwind/react/utils/withMT");
-module.exports =  withMT({
+// const withMT = require("@material-tailwind/react/utils/withMT");
+module.exports =  ({
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -9,6 +9,7 @@ module.exports =  withMT({
       'roboto': 'roboto',
       'hurricane':'Hurricane',
     },
+
     screens: {
       'xs': '100px',
       // => @media (min-width: 640px) { ... }

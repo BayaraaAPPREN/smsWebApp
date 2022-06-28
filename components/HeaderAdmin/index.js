@@ -6,7 +6,7 @@ import { Fragment, useState } from 'react'
 export default function HeaderAdmin(){
 
     let [isOpen, setIsOpen] = useState(false)
-    console.log(isOpen)
+   
 
     function closeModal() {
       setIsOpen(false)

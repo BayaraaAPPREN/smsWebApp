@@ -1,15 +1,12 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
-import DatePicker from "react-datepicker";
-
-import "react-datepicker/dist/react-datepicker.css";
 
 
 export default function HeaderCustom(){
 
     let [isOpen, setIsOpen] = useState(false)
     const [startdate, setStartDate] = useState(new Date());
-    console.log(isOpen)
+   
 
     function closeModal() {
       setIsOpen(false)

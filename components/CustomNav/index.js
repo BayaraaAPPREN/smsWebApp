@@ -2,11 +2,25 @@
 
 
 import Link from 'next/link'
+import axios from "axios";
 import Dialog from '../Dialog';
+import { useState, useEffect } from "react";
+import { useCookies } from "react-cookie";
+import { useAppContext } from '../../pages/context';
 
 
+export default function CustomNav(){
+    const mycontext = useAppContext();
+    const [mydata, setData] =  useState([]);
+    const [cookie, setCookie] = useCookies(["user"]);
+    const id = cookie.id
 
-export default function CustomNav(props){
+    useEffect(() => {
+            axios.get('http://localhost:8080/hello/user/' + id)
+            .then(response => {
+                setData(response.data)
+              });
+    })
 
     return(
         <div className="">
@@ -18,10 +32,14 @@ export default function CustomNav(props){
                        <img className=" border-solid border-4 border-lime-500 rounded-full w-28 h-28 " src="/ww.jpg"/>
                     </div>
                     <div className="text-xl mt-8 mb-1  text-center text-white hover:text-lime-500 font-normal hover:font-bold cursor-pointer duration-100 transition ease-in-out delay-50  hover:-translate-y-1 ">
-                       <h1 className="font-semibold ">Болдоо</h1>
+                       <h1 className="font-semibold ">{mydata.username}</h1>
                     </div>
-                    <div className="text-white text-xs mb-20 text-center font-Source Serif Pro underline decoration-white font-normal hover:font-bold">
-                       <h1>bayarsuren@gmail.com</h1>
+                    <div className="text-white text-xs mb-4 text-center font-Source Serif Pro underline decoration-white font-normal hover:font-bold">
+                       <h1>{mydata.email}</h1>
+                    </div>
+                    <div className="text-white flex justify-center">
+                        <h1>ID: </h1>
+                       <h1>{mydata.id}</h1>
                     </div>
                        
                        <div className='mt-2'>

@@ -1,6 +1,8 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
+import Dashboard from '../Dashboard';
 import Calendar from './calendar'
+import { useCookies } from "react-cookie";
 
 export default function MyModal() {
   let [isOpen, setIsOpen] = useState(false)
@@ -9,7 +11,38 @@ export default function MyModal() {
   const [order, setOrder] = useState({ code: "", type: "", number: "", text: "", date: "", time: "", textaera: ""});
   const [ text, setText ] = useState('')
   const [ textaera, setTextaera ] = useState('255')
-  console.log(order)
+  const [order1, setOrder1] = useState([])
+  const [cookie, setCookie] = useCookies(["user"]);
+  const id = cookie.id
+
+  async function postData(url = '', data = {}) {
+    const response = await fetch(url, {
+      method: 'POST', 
+      headers: {'Content-Type': 'application/json' },
+      body: JSON.stringify({
+            conditionCode: order.code,
+            type1: order.type,
+            specialnumber: order.number,
+            date: order.date,
+            time: order.time,
+            text: order.text,
+            addexplantion:order.textaera,
+            sendusers: "4555",
+            userinfo: id
+
+       })
+      });
+      return response.json(); 
+    }
+   
+   async function Login (){
+      postData('http://localhost:8080/order/add', { answer: 42 })
+      .then(data => {
+          setOrder1(data);
+          console.log(order1)
+      });
+    }
+
 
   // function Submit(){
   //   if()
@@ -172,7 +205,7 @@ export default function MyModal() {
                     </button>
                      
                     <button
-                      onClick={closeModal}
+                      onClick={Login}
                       className="bg-blue-700 hover:bg-blue-500 text-white rounded-lg px-4 py-2 ml-16"
                     >
                       Хадгалах

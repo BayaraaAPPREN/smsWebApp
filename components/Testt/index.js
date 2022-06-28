@@ -1,9 +1,11 @@
-import Link from "next/link";
 
-export default function Testt(data){
-    return (
-      <div>
-              <h1>{data.email}</h1>
-      </div>
-      );
+
+
+export default function Test(data) {
+  return (
+    <div>
+        <h1>{data.email}</h1>
+        <p>{data.id}</p>
+    </div>
+  )
 }
